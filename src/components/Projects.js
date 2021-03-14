@@ -18,6 +18,9 @@ const Projects = () => {
               thumbnail {
                 url
               }
+              webp {
+                url
+              }
               title
               tags
               isWebsite
@@ -36,9 +39,13 @@ const Projects = () => {
       {!projects ? (
         <Loading />
       ) : (
-        projects.map(({ thumbnail, title, tags, isWebsite, url }) => (
+        projects.map(({ thumbnail, webp, title, tags, isWebsite, url }) => (
           <div className='card' key={title}>
-            <img src={thumbnail.url} alt={url} />
+            <picture>
+              <source srcset={webp.url} type='image/webp' />
+              <source srcset={thumbnail.url} type='image/jpeg' />
+              <img src='img/creakyOldJPEG.jpg' alt={title} />
+            </picture>
             <div className='info'>
               <div className='text'>
                 <h1>{title}</h1>
@@ -78,8 +85,8 @@ const ProjectCards = styled.div`
   padding: 70px 0;
   .card {
     margin: 10px;
-    img {
-      max-width: 100%;
+    picture {
+      width: 100%;
     }
     .info {
       background-color: var(--color-bg__light);

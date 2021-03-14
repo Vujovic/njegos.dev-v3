@@ -5,7 +5,7 @@ import Me from '../images/me.jpg'
 
 const Bio = () => (
   <Style>
-    <Img src={Me} />
+    <Img src={Me} alt='This is me' />
     <div className='description'>
       <h1>Njegos Vujovic</h1>
       <h2>Web developer & UI/UX designer</h2>
@@ -27,8 +27,8 @@ const Style = styled.div`
     border: 2px solid var(--color-link);
     border-radius: 50%;
     margin-right: 30px;
-    max-height: 120px;
-    max-width: 120px;
+    height: 130px;
+    width: 130px;
     padding: 4px;
   }
   .description {
