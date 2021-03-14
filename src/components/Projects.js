@@ -86,7 +86,10 @@ const ProjectCards = styled.div`
   .card {
     margin: 10px;
     picture {
-      width: 100%;
+      source,
+      img {
+        max-width: 460px;
+      }
     }
     .info {
       background-color: var(--color-bg__light);
@@ -126,6 +129,14 @@ const ProjectCards = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 35px 0;
+    .card {
+      picture {
+        source,
+        img {
+          max-width: 95vw;
+        }
+      }
+    }
   }
 `
 
