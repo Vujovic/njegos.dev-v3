@@ -8,5 +8,4 @@ A redesign of my personal website using [React.js](https://reactjs.org/) and [Gr
 
 ### Todo
 
-- [ ] Work on dark theme color scheme
 - [ ] Rework the thumbnail images to go along with dark theme

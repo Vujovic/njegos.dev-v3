@@ -10,8 +10,8 @@ export const lightTheme = {
 export const darkTheme = {
   colorPrimary: '#FAFAFA',
   colorLight: '#ECECEC',
-  colorBg: '#363636',
-  colorBgLight: '#252525',
+  colorBg: '#162447',
+  colorBgLight: '#101A34',
   colorLink: '#F15A5A',
   colorBorder: '#000000',
 }
