@@ -5,7 +5,3 @@ A redesign of my personal website using [React.js](https://reactjs.org/) and [Gr
 ### See it live:
 
 [https://njegos.dev](https://njegos.dev)
-
-### Todo
-
-- [ ] Rework the thumbnail images to go along with dark theme
