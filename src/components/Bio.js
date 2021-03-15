@@ -23,7 +23,7 @@ const Style = styled.div`
   justify-content: center;
   padding: 40px 0;
   img {
-    background-color: #fff;
+    background-color: var(--color-bg);
     border: 2px solid var(--color-link);
     border-radius: 50%;
     margin-right: 30px;

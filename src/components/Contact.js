@@ -88,6 +88,7 @@ const Form = styled.form`
     background-color: var(--color-link);
     color: var(--color-bg__light);
     font-size: var(--font-size__medium);
+    font-weight: 600;
     cursor: pointer;
     :hover {
       opacity: 0.9;

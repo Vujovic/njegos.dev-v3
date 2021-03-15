@@ -23,21 +23,21 @@ const Tabs = () => {
         <button
           className={selectedTab === 'work' ? 'active' : ''}
           onClick={() => setSelectedTab('work')}
-          ariaLabel='Work section'
+          aria-label='Work section'
         >
           <Work /> <span className='text'>WORK</span>
         </button>
         <button
           className={selectedTab === 'about' ? 'active' : ''}
           onClick={() => setSelectedTab('about')}
-          ariaLabel='About section'
+          aria-label='About section'
         >
           <About /> <span className='text'>ABOUT</span>
         </button>
         <button
           className={selectedTab === 'contact' ? 'active' : ''}
           onClick={() => setSelectedTab('contact')}
-          ariaLabel='Contact section'
+          aria-label='Contact section'
         >
           <Contact /> <span className='text'>CONTACT</span>
         </button>

@@ -1,23 +1,37 @@
-import { createGlobalStyle } from 'styled-components'
+import { useState } from 'react'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
+import { lightTheme, darkTheme } from './Themes'
 import Header from './Header'
+import ThemeSwitchButton from './ThemeSwitchButton'
 
-const Layout = ({ children }) => (
-  <>
-    <GlobalStyle />
-    <Header />
-    <main>{children}</main>
-  </>
-)
+const Layout = ({ children }) => {
+  const [theme, setTheme] = useState('light')
+
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
+  return (
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle />
+      <Header />
+      <ThemeSwitchButton theme={theme} onClick={themeToggler}>
+        Switch Theme
+      </ThemeSwitchButton>
+      <main>{children}</main>
+    </ThemeProvider>
+  )
+}
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --color-primary: #363636;
-    --color-light: #7B7B7B;
-    --color-bg: #FAFAFA;
-    --color-bg__light: #FFFFFF;
-    --color-link: #F15A5A;
-    --color-border: #DBDBDB;
+    --color-primary: ${({ theme }) => theme.colorPrimary};
+    --color-light: ${({ theme }) => theme.colorLight};
+    --color-bg: ${({ theme }) => theme.colorBg};
+    --color-bg__light: ${({ theme }) => theme.colorBgLight};
+    --color-link: ${({ theme }) => theme.colorLink};
+    --color-border: ${({ theme }) => theme.colorBorder};
     --font-size__large: 24px;
     --font-size__medium: 14px;
     --font-size__small: 12px;
@@ -26,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
   *, body {
     margin: 0;
     padding: 0;
-    outline-color: var(--color-primary)
+    outline-color: var(--color-primary);
   }
   body {
     background-color: var(--color-bg);
